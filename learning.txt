@@ -1,0 +1,8 @@
+Entity : objects or grp of objects
+blueprint: Class
+
+method: function written inside a Class
+
+Amazon: most probably implemented the products with class and objects
+
+this: it is ptr of the class, so to access class members we have to use '->' arrow operator in C++
