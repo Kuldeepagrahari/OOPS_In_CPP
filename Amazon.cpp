@@ -1,13 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Product{
-    public:
+class Product {
+private:
+    int price, discount; 
+
+public:
+    // Attributes / Properties
     string id, name;
-    int price;
-    int discount;
     vector<string> categories;
 
+    // Parameterized Constructor
     Product(string id, string name, int price, int discount, vector<string> cat){
         this -> id = id;
         this -> name = name;
@@ -16,7 +19,7 @@ class Product{
         this -> categories = cat;
        
     }
-
+    // setter methods
     void updateDiscount(int newDiscount){
         this -> discount = newDiscount;
     }
@@ -24,6 +27,12 @@ class Product{
     void updatePrice(int newPrice){
         this -> price = newPrice;
     }
+
+    // getter methods
+    int getPrice(){
+        return price;
+    }
+
     void printDetails(){
         cout << "prod Name: " << name << endl << "price: " << price << endl << "discount offer: " << discount  << "%" << endl;
         cout << "Categories: [ ";
@@ -33,6 +42,7 @@ class Product{
         cout << "-------------------------------------------------------";
         cout << endl;
     }
+    
 };
 
 int main(){
@@ -40,6 +50,7 @@ int main(){
     Product p1 = Product("12", "X", 299, 20, catg_cont[0]);
     Product p2 = Product("42", "XY", 199, 10, catg_cont[1]);
     Product p3 = Product("16", "XZ", 499, 20, catg_cont[2]);
+    p1.name = "porsche";
     p1.printDetails();
     p1.updatePrice(159);
     p1.printDetails();

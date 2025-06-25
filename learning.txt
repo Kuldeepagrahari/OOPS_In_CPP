@@ -5,4 +5,52 @@ method: function written inside a Class
 
 Amazon: most probably implemented the products with class and objects
 
-this: it is ptr of the class, so to access class members we have to use '->' arrow operator in C++
+this: it is special ptr(that points to current object of the class) in C++, so to access object members we have to use '->' arrow operator in C++ = this -> prop or *(this).prop [*this (* -> dereferencing operator) : value at address stored in "this" ptr]
+
+Data Hiding: In OOPS, this achieved by access modifiers (private, public, protected) and encapsulation -> data members and method members are bind together so that data can be managed better and can be made inaccessible outside the class when requires
+and hence protect from unauthorized access
+
+Constructors: 
+0. Always defined in public scope
+1. Constructor call starts automatically when program compiles, if no constructor then compiler itself call default constructor, no need to call excplicitly, and in whole program constructor is called only once during object creation
+2. No Return type
+3. Same name as Class
+4. Memory Allocation happens for members during object creation / constructor call as class itself does not req much space into memory [ objects store into memory -> basically, not class ]
+5. Memory Allocation -> responsiblity is on Constructor
+
+3-Types of Constructor:
+1. Non-Parameterized
+2. Parameterized
+3. Copy
+
+Copy Constructor : Copy 1 object into another object or new object
+
+Shallow Copy & Deep Copy
+____________________________________
+Shallow Copy : copies all the member values from one object to another
+--------------------      --------------
+| name = "sam"      |  => | name = "sam"|
+| cgpa = 1X099      |     | cgpa = 1X099|
+---------------------     ---------------
+-------
+| 8.8 |  -> inside Heap
+-------
+ 1X099
+ 
+ Now if you change cgpa for copied obj it will also reflect for original object as cgpa is pointing to same address inside Heap -> this is a kind of problem => It occur with both custom and default constructor call
+
+# Note: Compiler only makes shallow copy as default copy constructor, it does not make deep copy as default, we need to make our own deep copy constructor
+----------------------------------------
+Deep Copy: not only copies member values but also make copies of any dynamically allocated memory that the members point to [allocate dif memory to those vars in the copy] -> Now if we make change into dynamically allocated vars in parent obj does not affect d.a.v. of child [copy] object
+--------------------      --------------
+| name = "sam"      |  => | name = "sam"|
+| cgpa = 1X099      |     | cgpa = 1X103|
+---------------------     ---------------
+------- -------
+| 8.8 | | 8.8 | -> inside Heap
+------- -------
+ 1X099   1X103
+
+ ______________________________________________________________________
+
+ Destructor: 
