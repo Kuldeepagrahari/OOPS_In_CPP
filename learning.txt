@@ -52,5 +52,15 @@ Deep Copy: not only copies member values but also make copies of any dynamically
  1X099   1X103
 
  ______________________________________________________________________
+ Constructor: Allocates memory to object members
+ Destructor: Deallocate memory or free up the memory allocated dynamically, Compiler automatically make and call destructors at the end of program, but it only deletes static space but not dynamic space -> thats why we require to make destructors
 
- Destructor: 
+ "delete" keyword is used to free up the space [ delete ptr ]
+ # Note: Even if we make our own destructor, Destructor call by itself/compiler does in the end of program to free up the whole space occupied, we do not need to call it excplicitly
+
+ ** Memory Leak: we make destructors so that no memory get wasted -> it will not affect much in our single file code but for large code bases of orgs it can raise much bigger problems -> that can be Memory Leak : where we have allocated memory to many vars but, after certain function calls we no longer using those vars, now those memory can not be allocated to other vars also and also not been in use currently -> means get wasted
+
+ _______________________________________________________________________________________________________________________________
+ 4 Pillars of OOPS:
+ 1. Inheritance : When Members of Parent/Base class pass to Child/Derived class or derived class inherits parent class members
+    * Helps in Code Reusability
