@@ -64,3 +64,49 @@ Deep Copy: not only copies member values but also make copies of any dynamically
  4 Pillars of OOPS:
  1. Inheritance : When Members of Parent/Base class pass to Child/Derived class or derived class inherits parent class members
     * Helps in Code Reusability
+    1. " : scope classname" is used to inherit a class into cur class
+    2. In case of default/non-parameterized constructor, When we make an obj of child class then constructor of parent class call go first than child's constructor ELSE
+    in case of parametrized -> we will call the parents constructor in child class manually... and again call for parent's constructor go first then child's constructor
+    3. But in case of destructor its shows opp behavior and child's destructor calls first than parent's destructor always.
+    output:
+      parent constructor call...
+      Child constructor call...
+      Sam 21 22106
+      Child destructor call...
+      Parent destructor call...
+
+Base Member Access \ Inheritance Type | Public Inheritance  | Protected Inheritance  | Private Inheritance
+--------------------------------------|---------------------|------------------------|----------------------
+public                                | public              | protected              | private
+protected                             | protected           | protected              | private
+private                               | Not Inherited       | Not Inherited          | Not Inherited
+
+Types of Inheritance : 
+1. Single Level: parent ->  child
+2. Multi-level: Parent -> parent -> .. -> child
+[ex: person(name, age) -> student(rollno) -> graduateStudent(researchTopic)]
+Person constructor call... 
+Student constructor call...
+Graduates constructor call...
+Sam 21 22106 Deep Learning
+Graduates destructors call...
+Student destructor call...
+Person destructor call...
+3. Multiple Inheritance: parent1   parent2   ...
+                            \         /
+                                child    -> child will be inheriting properties of multiple parents
+   [Ex: student(name, roll no), Teacher(salary, age), TA( who is both student and teacher, inheriting name, age, salary, rollno ...)]
+   class TA : public Student, public Teacher {
+
+   };
+
+   4.Hierarchial Inheritance
+          Parent
+         /      \
+      child1  child2
+
+      multiple classes inherit same parent class
+   5. Hybrid [mix of all above types]
+
+   _____________________________________________________________________________________________________________________________
+   2. Polymorphism : 
