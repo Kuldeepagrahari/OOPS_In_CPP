@@ -109,4 +109,10 @@ Person destructor call...
    5. Hybrid [mix of all above types]
 
    _____________________________________________________________________________________________________________________________
-   2. Polymorphism : 
+   2. Polymorphism : Poly -> multiple, morph -> forms
+      Compile Time Polymorphism -> as compiler has the responsibility to call constructor and methods
+      _____________________________
+      Ability of objects to behave in dif ways depending on the context -> obj knows which constructor it should call -> this is called constructor overloading[multiple constructors with dif parameters type/number ]
+
+      * Similarly: Function Overloading : methods/fun with dif number of paramters or dif type of paramters
+      
